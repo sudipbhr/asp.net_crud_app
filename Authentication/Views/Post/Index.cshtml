@@ -1,0 +1,31 @@
+﻿@model List<Post>
+
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var post in Model)
+        {
+            <li>
+                <h3>@post.Title</h3>
+                <p>@post.Content</p>
+                <p>Likes: @post.Likes.Count</p>
+                <p>Dislikes: @post.Dislike.Count</p>
+                <p> Comments: @post.Comments.Count</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No posts found.</p>
+}

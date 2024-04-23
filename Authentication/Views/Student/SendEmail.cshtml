@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Send Email";
+}
+
+<h1>Send Email</h1>
+
+<form asp-controller="Student" asp-action="SendEmail" method="post">
+    <div class="form-group">
+        <label for="toEmail">To Email:</label>
+        <input type="email" class="form-control" id="toEmail" name="toEmail" required>
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" class="form-control" id="subject" name="subject" required>
+    </div>
+    <div class="form-group">
+        <label for="body">Body:</label>
+        <textarea class="form-control" id="body" name="body" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Email</button>
+</form>
